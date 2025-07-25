@@ -13,7 +13,9 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+
 @Entity
+@Table(name="loan")
 public class Loan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,3 +1,15 @@
+# 💸 대출 금리 비교 시스템 (Loan Comparison System)
+
+> JSP + Servlet + JPA를 활용한 대출 상품 비교 시스템
+> 
+> 
+> 다양한 은행의 대출 상품을 등록/수정/조회/삭제할 수 있으며,
+> 
+> 조건별 검색 기능을 통해 사용자가 원하는 상품을 쉽게 찾을 수 있도록 지원합니다.
+> 
+
+---
+
 ## 👥팀원
 <table>
   <tr>
@@ -22,18 +34,6 @@
   </tr>
 </table>
 
-# 💸 대출 금리 비교 시스템 (Loan Comparison System)
-
-> JSP + Servlet + JPA를 활용한 대출 상품 비교 시스템
-> 
-> 
-> 다양한 은행의 대출 상품을 등록/수정/조회/삭제할 수 있으며,
-> 
-> 조건별 검색 기능을 통해 사용자가 원하는 상품을 쉽게 찾을 수 있도록 지원합니다.
-> 
-
----
-
 ## 🧾 프로젝트 개요
 
 - **개발 환경**: Java 17+, Maven, Tomcat, MySQL
@@ -42,6 +42,8 @@
 - **기획 목적**: 웹 개발 및 자바 핵심 문법 학습을 통합하여, 실용적인 금리 비교 시스템 구축
 
 ---
+
+
 
 ## 🛠️ 기술 선택 이유
 
@@ -61,6 +63,16 @@
 - JSP에서 `forward` 방식으로 사용자와 데이터 상호작용 구현
 
 ---
+
+## 🖥️ UI
+
+### 
+
+### 출력조회 결과 화면 <br>
+
+### 관리페이지 화면 <br>
+
+
 
 ## ✏️ 기능
 
@@ -88,6 +100,8 @@
 - 조건 검색 (예: 은행명, 대출유형, 최대금리 등 필터링)
 
 ---
+
+
 
 ## ⚙️ 주요 기능 요약
 
@@ -170,6 +184,7 @@ CREATE TABLE loan (
 
 ```
 
+
 ---
 
 ## 🛠️ Troubleshooting
@@ -191,6 +206,22 @@ CREATE TABLE loan (
   <scope>provided</scope>
 </dependency>
 
+```
+
+ ### 3. `Tomcat 문제 해결`
+ - Build Path → Configure Build Path → Libraries → Classpath → Add Library → Server Runtime → Tomcat 선택
+ - Project Facets → Dynamic Web Module / Java / JavaScript / JPA 선택
+ - Maven -> Update Project 선택
+
+### 4. 'Mysql JDBC 연동 오류 해결'
+
+- Mysql 연동을 위한 persistence.xml 내에 JDBC Propertie 추가.
+
+```xml
+<property name="javax.persistence.jdbc.driver"
+  value="com.mysql.cj.jdbc.Driver" />
+<property name="javax.persistence.jdbc.url"
+  value="jdbc:mysql://localhost:3306/fisa?serverTimezone=Asia/Seoul" />
 ```
 
 ---

@@ -9,7 +9,7 @@ import jakarta.servlet.http.*;
 import model.entity.Loan;
 import service.LoanService;
 
-@WebServlet("/search")
+@WebServlet("/loan/search")
 public class LoanController extends HttpServlet {
 
     private LoanService service = new LoanService();

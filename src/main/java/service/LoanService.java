@@ -33,4 +33,10 @@ public class LoanService {
                 .collect(Collectors.toList());
     }
 
+	public void updateLoan(Long id, String productName, String bankName, String loanType, Double interestRate,
+			Integer maxLimit, Integer loanTermMonth) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

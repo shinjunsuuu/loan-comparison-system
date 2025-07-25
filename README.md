@@ -62,6 +62,10 @@
 - 전통적인 Java 웹 구조에 대한 실습 목적
 - JSP에서 `forward` 방식으로 사용자와 데이터 상호작용 구현
 
+### ✅ MySQL
+- 효율적인 데이터 조회와 관계형 데이터 모델의 견고한 구조를 활용
+- 단순하지만 신뢰성 있는 정보 접근을 위해 채택
+
 ---
 
 ## 🖥️ UI
@@ -72,18 +76,18 @@
 ---
 
 ### 💻 대출상품 조회 결과 화면 <br>
-<img width="1911" height="894" alt="대출 상품 검색 결과 화면" src="https://github.com/user-attachments/assets/0fa6bcd5-9dd9-44ce-a89c-8417443ac06a" />
+<img width="1918" height="905" alt="대출 상품 검색을 위한 화면" src="https://github.com/user-attachments/assets/3b5cb760-20eb-4865-94aa-7fd535559406" />
 
 ---
 
 ### 🔒 관리페이지 화면 <br>
 
-<img width="1902" height="901" alt="대출 상품 관리페이지 화면" src="https://github.com/user-attachments/assets/f690fdec-24b3-4ec4-89c4-390e05d03afa" />
+<img width="1897" height="949" alt="대출 상품 관리페이지 화면2" src="https://github.com/user-attachments/assets/bb06c97a-4354-4136-89fb-6f6fe34b8fb5" />
 
 ### 🔧 대출상품 수정 화면
 
+<img width="1920" height="909" alt="대출 상품 수정화면" src="https://github.com/user-attachments/assets/e3e30f0a-5ffc-4128-88ac-034e17665bf0" />
 
----
 
 ## ✏️ 기능
 
@@ -130,16 +134,20 @@
 
 ---
 
-```
 📁 java/
 ├── 📁 controller
-│   └── LoanController.java
+│   ├── LoanAddController.java
+│   ├── LoanAdminController.java
+│   ├── LoanDeleteController.java
+│   ├── LoanEditController.java
+│   └── LoanSearchController.java
 │
 ├── 📁 META-INF
-│   └── persistence.xml
+│   ├── persistence.xml
+│   └── log4j.properties
 │
 ├── 📁 model
-│   └── entity/
+│   └── 📁 entity
 │       └── Loan.java
 │
 ├── 📁 repository
@@ -151,12 +159,15 @@
 └── 📁 util
     └── DBUtil.java
 
-📁 js/
-└── main.js
-
 📁 webapp/
+├── 📁 views
+│   ├── admin.jsp
+│   ├── edit.jsp
+│   └── result.jsp
+│
+├── 📁 META-INF
+├── 📁 WEB-INF
 └── index.html
-```
 
 ---
 
@@ -226,7 +237,7 @@ CREATE TABLE loan (
 
 ### 4. 'Mysql JDBC 연동 오류 해결'
 
-- Mysql 연동을 위한 persistence.xml 내에 JDBC Propertie 추가.
+- Mysql 연동을 위한 persistence.xml 내에 JDBC Propertie 추가
 
 ```xml
 <property name="javax.persistence.jdbc.driver"
